@@ -8,6 +8,9 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
 
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js">
+    </script>
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 
@@ -15,11 +18,54 @@
 </head>
 
 <body>
-    <div class="panel panel-default">
+    <!-- Header -->
+    <div class="col-xs-12">
+        <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+                <a class="navbar-brand" href="#">Agora</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse-01">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a ng-click="tab = 1">Submit an Item<span class="navbar-unread"></span></a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Items <b class="caret"></b></a>
+                        <span class="dropdown-arrow"></span>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                    <li><a ng-click="tab = 0">Buy</a></li>
+                </ul>
+                <form class="navbar-form navbar-right" action="#" role="search">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input class="form-control" id="navbarInput-01" type="search" placeholder="Search">
+                            <span class="input-group-btn">
+                      <button type="submit" class="btn"><span class="fui-search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+        <!-- /navbar -->
+    </div>
+    <!-- Product Listings -->
+    
+    <div class="panel panel-default" ng-show="tab == 0">
         <!-- heading changes depending on type of item. For example, food can be blue. -->
-        <div class="panel-heading" style ='background-color: #2980B9;'><a href="#" class="pull-right" >Buy</a>
+        <div class="panel-heading" style='background-color: #2980B9;'>
+            <button type="button" class="btn btn-default pull-right">Buy</button>
             <h4>Item Name</h4></div>
-        <div class="panel-body" >
+        <div class="panel-body">
             <p><img src="//placehold.it/150x150" class="img-circle pull-right"> <a href="#">Price:</a></p>
             <a href="#">Distance:</a>
             <div class="clearfix"></div>
@@ -28,9 +74,10 @@
     </div>
     <div class="panel panel-default">
         <!-- heading changes depending on type of item. For example, food can be blue. -->
-        <div class="panel-heading" style ='background-color: #C0392B;'><a href="#" class="pull-right">Buy</a>
+        <div class="panel-heading" style='background-color: #C0392B;'>
+            <button type="button" class="btn btn-default pull-right">Buy</button>
             <h4>Item Name2</h4></div>
-        <div class="panel-body" >
+        <div class="panel-body">
             <p><img src="//placehold.it/150x150" class="img-circle pull-right"> <a href="#">Price:</a></p>
             <a href="#">Distance:</a>
             <div class="clearfix"></div>
@@ -39,13 +86,44 @@
     </div>
     <div class="panel panel-default">
         <!-- heading changes depending on type of item. For example, food can be blue. -->
-        <div class="panel-heading" style ='background-color: #27AE60;'><a href="#" class="pull-right">Buy</a>
+        <div class="panel-heading" style='background-color: #27AE60;'>
+            <button type="button" class="btn btn-default pull-right">Buy</button>
             <h4>Item Name2</h4></div>
-        <div class="panel-body" >
+        <div class="panel-body">
             <p><img src="//placehold.it/150x150" class="img-circle pull-right"> <a href="#">Price:</a></p>
             <a href="#">Distance:</a>
             <div class="clearfix"></div>
             <hr> Description here
+        </div>
+    </div>
+    <!-- Submit Product -->
+    <div class="col-centered" ng-show="tab == 1">
+        <div class="form-group col-xs-2 col-centered">
+            <input type="text" class="form-control" id="usr" placeholder="Product Name">
+        </div>
+        <div class="container col-centered">
+            <img class="center-block" src="http://placehold.it/350x150" />
+        </div>
+        <form action="upload.php" method="post" enctype="multipart/form-data" class="col-lg-3">
+            Select image to upload:
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input type="submit" value="Upload Image" name="submit">
+        </form>
+        <div class="form-group col-xs-3 col-centered">
+            <textarea class="form-control" rows="5" placeholder="Description"></textarea>
+        </div>
+        <div class="dropdown col-centered">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Timeframe
+                <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a href="#">1 min.</a></li>
+                <li><a href="#">5 min.</a></li>
+                <li><a href="#">10 min.</a></li>
+                <li><a href="#">15 min.</a></li>
+                <li><a href="#">30 min.</a></li>
+                <li><a href="#">60 min.</a></li>
+            </ul>
+            <button type="button" class="btn btn-default">Submit</button>
         </div>
     </div>
 </body>
