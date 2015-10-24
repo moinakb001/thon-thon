@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="submitProduct.css">
+</head>
+
+<body>
+    <div class="grid">
+        <div class="row">
+            <div class="form-group col-xs-2 .col-centered">
+                <input type="text" class="form-control" id="usr" placeholder="Product Name">
+            </div>
+        </div>
+        <div class="row">
+            <form action="upload.php" method="post" enctype="multipart/form-data" class="col-lg-3">
+                Select image to upload:
+                <input type="file" name="fileToUpload" id="fileToUpload">
+                <input type="submit" value="Upload Image" name="submit">
+            </form>
+        </div>
+        <div class="row">
+            <div class="form-group col-xs-3">
+                <textarea class="form-control" rows="5" placeholder="Description"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Timeframe
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">1 min.</a></li>
+                    <li><a href="#">5 min.</a></li>
+                    <li><a href="#">10 min.</a></li>
+                    <li><a href="#">15 min.</a></li>
+                    <li><a href="#">30 min.</a></li>
+                    <li><a href="#">60 min.</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <button type="button" class="btn btn-default">Submit</button>
+        </div>
+    </div>
+</body>
+
+</html>

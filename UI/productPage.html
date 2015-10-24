@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<body>
+	<h1 class = "text-center">Product Name</h1>
+
+	<div class="container">
+		<div class="row">
+			<div class="span4"></div>
+			<div class="span4"><img class="center-block" src="http://placehold.it/350x150" /></div>
+			<div class="span4"></div>
+		</div>
+	</div>
+	
+	<p class = "text-center">Product Descritpion</p>
+	
+	<p class = "text-center" id = "sellerRating"></p>
+	
+	<p class = "text-center" id = "distance"></p>
+	
+	<p class = "text-center" id = "direction"></p>
+
+	<p class = "text-center">
+		<button type = "button" class = "btn btn-success">
+			Make Offer
+		</button>
+	</p>
+	
+	<script>
+		var rating = 4.5; <!-- placeholder variable -->
+		var verification = "Seller Rating: " + rating + "/5";
+		document.getElementById("sellerRating").innerHTML = verification;
+		var dist = 15; <!-- placeholder variable -->
+		var pplDist = "Distance: " + dist + " units??"; <!-- placeholder unit -->
+		document.getElementById("distance").innerHTML = pplDist;
+		var dir = 'NW';<!-- placeholder variable -->
+		var direct = "Direction: " + dir;
+		document.getElementById("direction").innerHTML = direct;
+	</script>
+	
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
