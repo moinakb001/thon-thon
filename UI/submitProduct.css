@@ -2,3 +2,9 @@
     float: none;
     margin: 0 auto;
 }
+.panel > .panel-heading {
+    background-image: none;
+    background-color: red;
+    color: white;
+
+}
