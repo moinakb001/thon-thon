@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>Bootstrap 101 Template</title>
+
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+	<h1 class = "text-center">Product Name</h1>
+
+	<div class="container">
+		<div class="row">
+			<div class="span4"></div>
+			<div class="span4"><img class="center-block" src="http://placehold.it/350x150" /></div>
+			<div class="span4"></div>
+		</div>
+	</div>
+	
+	<p class = "text-center">Product Descritpion</p>
+	
+	<p class = "text-center" id = "sellerRating"></p>
+	
+	<p class = "text-center" id = "distance"></p>
+	
+	<p class = "text-center" id = "direction"></p>
+
+	<p class = "text-center">
+		<button type = "button" class = "btn btn-success">
+			Make Offer
+		</button>
+	</p>
+	
+	<script>
+		var rating = 4.5; <!-- placeholder variable -->
+		var verification = "Seller Rating: " + rating + "/5";
+		document.getElementById("sellerRating").innerHTML = verification;
+		var dist = 15; <!-- placeholder variable -->
+		var pplDist = "Distance: " + dist + " units??"; <!-- placeholder unit -->
+		document.getElementById("distance").innerHTML = pplDist;
+		var dir = 'NW';<!-- placeholder variable -->
+		var direct = "Direction: " + dir;
+		document.getElementById("direction").innerHTML = direct;
+	</script>
+	
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
