@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="submitProduct.css">
 </head>
 
-<body>
+<body ng-app="TabsApp">
     <!-- Header -->
     <div class="col-xs-12">
         <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
@@ -27,9 +27,9 @@
                 </button>
                 <a class="navbar-brand" href="#">Agora</a>
             </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse-01">
+            <div class="collapse navbar-collapse" id="navbar-collapse-01" ng-controller="TabsCtrl">
                 <ul class="nav navbar-nav navbar-left">
-                    <li><a ng-click="tab = 1">Submit an Item<span class="navbar-unread"></span></a></li>
+                    <li><a href="submitProduct.html">Submit an Item<span class="navbar-unread"></span></a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Items <b class="caret"></b></a>
                         <span class="dropdown-arrow"></span>
@@ -41,7 +41,7 @@
                             <li><a href="#">Separated link</a></li>
                         </ul>
                     </li>
-                    <li><a ng-click="tab = 0">Buy</a></li>
+                    <li><a href="listing.html">Buy</a></li>
                 </ul>
                 <form class="navbar-form navbar-right" action="#" role="search">
                     <div class="form-group">
@@ -60,7 +60,7 @@
     </div>
     <!-- Product Listings -->
     
-    <div class="panel panel-default" ng-show="tab == 0">
+    <div class="panel panel-default" id="one">
         <!-- heading changes depending on type of item. For example, food can be blue. -->
         <div class="panel-heading" style='background-color: #2980B9;'>
             <button type="button" class="btn btn-default pull-right">Buy</button>
@@ -96,36 +96,5 @@
             <hr> Description here
         </div>
     </div>
-    <!-- Submit Product -->
-    <div class="col-centered" ng-show="tab == 1">
-        <div class="form-group col-xs-2 col-centered">
-            <input type="text" class="form-control" id="usr" placeholder="Product Name">
-        </div>
-        <div class="container col-centered">
-            <img class="center-block" src="http://placehold.it/350x150" />
-        </div>
-        <form action="upload.php" method="post" enctype="multipart/form-data" class="col-lg-3">
-            Select image to upload:
-            <input type="file" name="fileToUpload" id="fileToUpload">
-            <input type="submit" value="Upload Image" name="submit">
-        </form>
-        <div class="form-group col-xs-3 col-centered">
-            <textarea class="form-control" rows="5" placeholder="Description"></textarea>
-        </div>
-        <div class="dropdown col-centered">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Timeframe
-                <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-                <li><a href="#">1 min.</a></li>
-                <li><a href="#">5 min.</a></li>
-                <li><a href="#">10 min.</a></li>
-                <li><a href="#">15 min.</a></li>
-                <li><a href="#">30 min.</a></li>
-                <li><a href="#">60 min.</a></li>
-            </ul>
-            <button type="button" class="btn btn-default">Submit</button>
-        </div>
-    </div>
-</body>
 
 </html>
